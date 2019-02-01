@@ -14,12 +14,12 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static boolean search(ArrayList<String> array, String e) {
+    public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
 
       for (int elt : array) {
-        if (elt.equals(e)) return true;
+        if (elt == e) return true;
       }
       return false;
     }
@@ -35,19 +35,18 @@ public static void main(String[] args) {
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           sc1.useDelimiter("[;\r\n]+");
-          java.util.ArrayList<String> inputList = new java.util.ArrayList<>();
+          java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
           while (sc1.hasNext())
           {
-            String value = sc1.next().replaceAll("\\s",""));
-            //int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
+            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
             inputList.add(value);
           }
           System.out.println(inputList);
 
 
           String input2 = req.queryParams("input2").replaceAll("\\s","");
-          //int input2AsInt = Integer.parseInt(input2);
-          String input2AsInt = input2;
+          int input2AsInt = Integer.parseInt(input2);
+
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
