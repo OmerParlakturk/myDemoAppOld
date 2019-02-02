@@ -54,7 +54,7 @@ public static void main(String[] args) {
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
-          map.put("result", result);
+          map.put("result", sumOfValues);
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
