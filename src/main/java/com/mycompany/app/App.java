@@ -14,19 +14,39 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
+    public String latestString = "";
+
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
+    
+
+      int sumOfValues = 0;
 
       for (int elt : array) {
-        if (elt == e) return true;
+        sumOfValues += elt; 
+        latestSring = latestString + elt + "+";       
       }
-      return false;
+        String controlS = latestString.substring(latestString.length()-1);
+
+        String newLatest = latestString;
+        if(controlS.contains("+")) {
+          newLatest = a.substring(0, a.length()-1);
+        }
+        latestString = newLatest;
+
+        if(sumOfValues == e){
+         latestString += " = " + e;
+         return true;
+        }else{
+         latestString += " != " + e;
+         return false;
+        }
     }
 public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World");
+        get("/", (req, res) -> "If the sum of given integer values is equal to second integer than result will true otherwise false");
 
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
@@ -50,7 +70,7 @@ public static void main(String[] args) {
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
-          map.put("result", result);
+          map.put(latestString , result);
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
