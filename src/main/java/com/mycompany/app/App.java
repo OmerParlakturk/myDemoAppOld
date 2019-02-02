@@ -55,6 +55,7 @@ public static void main(String[] args) {
 
          Map map = new HashMap();
           map.put("result", sumOfValues);
+          sumOfValues = 0;
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
