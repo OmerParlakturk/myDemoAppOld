@@ -33,8 +33,9 @@ public class App
         String newLatest = latestString;
         if(controlS.contains("+")) {
 
-          if(latestString.length() > 0)
+          if(latestString.length() > 0){
           newLatest = latestString.substring(0, latestString.length()-1);
+          }
         }
         latestString = newLatest;
 
@@ -49,7 +50,7 @@ public class App
 public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "If the sum of given integer values is equal to second integer than result will true otherwise false");
+        get("/", (req, res) -> "Hello");
 
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
