@@ -16,14 +16,14 @@ public class App
 {
 public static int sumOfValues = 0;
 
-puclic static String sumOfString = "";
+public static String sumOfString = "";
 
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
 
       for (int i=0; i<array.size(); i++) {
-         //sumOfString += array.get(i) + "+";
+         sumOfString += array.get(i) + "+";
          sumOfValues += array.get(i);
       }
 
