@@ -40,7 +40,7 @@ public static String sumOfString = "(";
 public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "If the sum of integers is equal to value then return true,otherwise return false");
+        get("/", (req, res) -> "If the sum of integers which are in the left box, is equal to value then program will show ... = ... true, otherwise program will show ... != ...");
 
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
