@@ -49,12 +49,15 @@ public static void main(String[] args) {
           //System.out.println(req.queryParams("input4"));
 
           String input1 = req.queryParams("input1");
-          String input1 = req.queryParams("input2");
-          String input1 = req.queryParams("input3");
+          String input2 = req.queryParams("input2");
+          String input3 = req.queryParams("input3");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
-          java.util.Scanner sc1 = new java.util.Scanner(input2);
-          java.util.Scanner sc1 = new java.util.Scanner(input3);
+          java.util.Scanner sc2 = new java.util.Scanner(input2);
+          java.util.Scanner sc3 = new java.util.Scanner(input3);
           sc1.useDelimiter("[;\r\n]+");
+          sc2.useDelimiter("[;\r\n]+");
+          sc3.useDelimiter("[;\r\n]+");
+
           java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
           while (sc1.hasNext())
           {
