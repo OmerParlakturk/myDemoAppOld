@@ -14,8 +14,8 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public String latestString = "";
-    public int sumOfValues = 0;
+    public static String latestString = "";
+    public static int sumOfValues = 0;
 
 
     public static boolean search(ArrayList<Integer> array, int e) {
