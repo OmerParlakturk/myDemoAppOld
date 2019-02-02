@@ -23,7 +23,7 @@ puclic static int sumOfString = "";
       if (array == null) return false;
 
       for (int i=0; i<array.size(); i++) {
-         sumOfString += array.get(i) + "+";
+         //sumOfString += array.get(i) + "+";
          sumOfValues += array.get(i);
       }
 
