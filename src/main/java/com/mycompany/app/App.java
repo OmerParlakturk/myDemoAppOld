@@ -26,14 +26,16 @@ public static String sumOfString = "";
          sumOfString += array.get(i) + "+";
          sumOfValues += array.get(i);
       }
-
+       sumOfString = sumOfString.substring(0,sumOfString.length()-1);
 
       if (sumOfValues == e){
- 
+        sumOfString += "=" + e;
         return true;
 
-      }
+      }else{
+        sumOfString += "!=" + e;
       return false;
+      }
     }
 public static void main(String[] args) {
         port(getHerokuAssignedPort());
@@ -62,8 +64,9 @@ public static void main(String[] args) {
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
-          map.put("result", sumOfValues);
+          map.put("result", sumOfString);
           sumOfValues = 0;
+          sumOfString = "";
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
