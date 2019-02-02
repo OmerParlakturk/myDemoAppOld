@@ -23,7 +23,7 @@ puclic static String sumOfString = "";
       if (array == null) return false;
 
       for (int i=0; i<array.size(); i++) {
-         sumOfString += array.get(i) + "+";
+         //sumOfString += array.get(i) + "+";
          sumOfValues += array.get(i);
       }
 
@@ -62,7 +62,7 @@ public static void main(String[] args) {
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
-          map.put("result", sumOfString);
+          map.put("result", sumOfValues);
           sumOfValues = 0;
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
