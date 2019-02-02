@@ -43,6 +43,7 @@ public static void main(String[] args) {
         get("/", (req, res) -> "If the sum of integers which are in the first, second and third box, is equal to the value which is in the right (the fourth) box, then the program will show ... = ... (equal), otherwise program will show ... != ... (not equal)");
 
         post("/compute", (req, res) -> {
+
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
           //System.out.println(req.queryParams("input3"));

@@ -37,12 +37,39 @@ public class AppTest
     }
 public void testFound() {
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      assertTrue(new App().search(array, 4));
+
+      int controlSum = 0;
+      int expectedSum = 10;
+
+      boolean controlBoolean;
+
+      for(int i = 0; i<array.size(); i++){
+       controlSum += array.get(i);
+      }
+      if(controlSum == expectedSum){
+      controlBoolean = true;
+      }else{
+      controlBoolean = false;
+      }
+
+      assertTrue(controlBoolean);
     }
 
-    public void testNotFound() {
+    public void testNotEqual() {
       ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      assertFalse(new App().search(array, 5));
+      
+      int controlSum = 0;
+      int expectedSum = 20;
+      boolean controlBoolean;
+      for(int i = 0; i<array.size(); i++){
+       controlSum += array.get(i);
+      }
+      if(controlSum == expectedSum){
+      controlBoolean = true;
+      }else{
+      controlBoolean = false;
+      }
+      assertFalse(controlBoolean);
     }
 
     public void testEmptyArray() {
