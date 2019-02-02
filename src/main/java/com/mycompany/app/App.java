@@ -15,23 +15,26 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App
 {
     public String latestString = "";
+    public int sumOfValues = 0;
+
 
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
-    
-
-      int sumOfValues = 0;
 
       for (int elt : array) {
         sumOfValues += elt; 
         latestSring = latestString + elt + "+";       
       }
-        String controlS = latestString.substring(latestString.length()-1);
+        String controlS= "";
+        if(latestString.length() > 0)
+        controlS = latestString.substring(latestString.length()-1);
 
         String newLatest = latestString;
         if(controlS.contains("+")) {
-          newLatest = a.substring(0, a.length()-1);
+
+          if(latestString.length() > 0)
+          newLatest = latestString.substring(0, latestString.length()-1);
         }
         latestString = newLatest;
 
