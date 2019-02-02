@@ -23,7 +23,7 @@ public class App
       if (array == null) return false;
 
       for (int elt : array) {
-        sumOfValues += elt; 
+        sumOfValues = sumOfValues + elt; 
         latestSring = latestString + elt + "+";       
       }
         String controlS= "";
