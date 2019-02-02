@@ -14,43 +14,19 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static String latestString = "";
-    public static int sumOfValues = 0;
-
-
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
 
       for (int elt : array) {
-        sumOfValues = sumOfValues + elt; 
-        latestSring = latestString + elt + "+";       
+        if (elt == e) return true;
       }
-        String controlS= "";
-        if(latestString.length() > 0)
-        controlS = latestString.substring(latestString.length()-1);
-
-        String newLatest = latestString;
-        if(controlS.contains("+")) {
-
-          if(latestString.length() > 0){
-          newLatest = latestString.substring(0, latestString.length()-1);
-          }
-        }
-        latestString = newLatest;
-
-        if(sumOfValues == e){
-         latestString += " = " + e;
-         return true;
-        }else{
-         latestString += " != " + e;
-         return false;
-        }
+      return false;
     }
 public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello");
+        get("/", (req, res) -> "Hello, World");
 
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
@@ -74,7 +50,7 @@ public static void main(String[] args) {
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
-          map.put(latestString , result);
+          map.put("result", result);
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
