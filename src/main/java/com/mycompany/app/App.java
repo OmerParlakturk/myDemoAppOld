@@ -51,9 +51,11 @@ public static void main(String[] args) {
           String input1 = req.queryParams("input1");
           String input2 = req.queryParams("input2");
           String input3 = req.queryParams("input3");
+
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           java.util.Scanner sc2 = new java.util.Scanner(input2);
           java.util.Scanner sc3 = new java.util.Scanner(input3);
+
           sc1.useDelimiter("[;\r\n]+");
           sc2.useDelimiter("[;\r\n]+");
           sc3.useDelimiter("[;\r\n]+");
@@ -66,13 +68,13 @@ public static void main(String[] args) {
           }
            while (sc2.hasNext())
           {
-            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-            inputList.add(value);
+            int value2 = Integer.parseInt(sc2.next().replaceAll("\\s",""));
+            inputList.add(value2);
           }
            while (sc3.hasNext())
           {
-            int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-            inputList.add(value);
+            int value3 = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            inputList.add(value3);
           }
 
           System.out.println(inputList);
