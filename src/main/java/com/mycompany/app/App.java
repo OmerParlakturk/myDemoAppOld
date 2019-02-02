@@ -16,7 +16,7 @@ public class App
 {
 public static int sumOfValues = 0;
 
-public static String sumOfString = "";
+public static String sumOfString = "(";
 
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
@@ -29,11 +29,11 @@ public static String sumOfString = "";
        sumOfString = sumOfString.substring(0,sumOfString.length()-1);
 
       if (sumOfValues == e){
-        sumOfString += "=" + e;
+        sumOfString += ") = " + e;
         return true;
 
       }else{
-        sumOfString += "!=" + e;
+        sumOfString += ") != " + e;
       return false;
       }
     }
@@ -66,7 +66,7 @@ public static void main(String[] args) {
          Map map = new HashMap();
           map.put("result", sumOfString);
           sumOfValues = 0;
-          sumOfString = "";
+          sumOfString = "(";
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
