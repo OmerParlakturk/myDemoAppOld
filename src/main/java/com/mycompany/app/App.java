@@ -14,13 +14,17 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
+public static int sumOfValues = 0;
+
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
 
-      for (int elt : array) {
-        if (elt == e) return true;
+      for (int i=0; i<array.size()-1; i++) {
+         sumOfValues += array.get(i);
       }
+
+      if (sumOfValues == e) return true;
       return false;
     }
 public static void main(String[] args) {
