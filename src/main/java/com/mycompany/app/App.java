@@ -44,9 +44,13 @@ public static void main(String[] args) {
 
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
+          //System.out.println(req.queryParams("input2"));
+          //System.out.println(req.queryParams("input3"));
           //System.out.println(req.queryParams("input4"));
 
           String input1 = req.queryParams("input1");
+          String input1 = req.queryParams("input2");
+          String input1 = req.queryParams("input3");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           java.util.Scanner sc1 = new java.util.Scanner(input2);
           java.util.Scanner sc1 = new java.util.Scanner(input3);
