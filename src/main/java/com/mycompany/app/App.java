@@ -16,15 +16,23 @@ public class App
 {
 public static int sumOfValues = 0;
 
+puclic static int sumOfString = "";
+
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
 
-      for (int i=0; i<array.size()-1; i++) {
+      for (int i=0; i<array.size(); i++) {
+         sumOfString += array.get(i) + "+";
          sumOfValues += array.get(i);
       }
 
-      if (sumOfValues == e) return true;
+
+      if (sumOfValues == e){
+ 
+        return true;
+
+      }
       return false;
     }
 public static void main(String[] args) {
@@ -54,7 +62,7 @@ public static void main(String[] args) {
           boolean result = App.search(inputList, input2AsInt);
 
          Map map = new HashMap();
-          map.put("result", sumOfValues);
+          map.put("result", sumOfString);
           sumOfValues = 0;
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
